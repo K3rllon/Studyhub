@@ -34,29 +34,57 @@
 
 #caixalogin {
     background-color: #E8E8E8;
-    width: 50%;
+    width: 340px;
     padding: 20px;
     font-family: 'Istok Web';
     border-radius: 10px;
+    box-shadow: 0px 0px 1px 0px black;
 }
 
 #titulologin{
+    font-weight: 500;
+    color: #D19338;
+    margin-bottom: 7px;
 
 }
 
 #subtitulo{
-    
+    font-weight: 500;
+    margin-bottom: 20px;
+    opacity: 0.7;
 }
 
 .tituloinput{
     line-height: 30px;
     color: #D19338;
     font-family: 'Istok Web', sans-serif;
+    font-weight: 800;
 }
 
 .input{
     border: none;
+    border-radius: 5px;
+    padding: 10px;
+    width: 300px;
+    font-size: 11px;
+    margin-bottom: 10px;
+    font-family: 'Istok Web', sans-serif;
+    font-weight: 100;
+}
+
+#botao{
+    border: none;
+    background-color: #D19338;
+    color: #E8E8E8;
+    margin-top: 40px;
     border-radius: 10px;
     padding: 10px;
     width: 300px;
+    cursor: pointer;
+    transition: all 0.9s ease;
+    margin-bottom: 30px;
+}
+
+#botao:hover{
+    transform: scale(0.95);
 }
