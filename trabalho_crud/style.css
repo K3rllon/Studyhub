@@ -41,6 +41,18 @@
     box-shadow: 0px 0px 1px 0px black;
 }
 
+#cabecalhologin{
+    display: flex;
+    align-items: center;
+}
+
+#imgporta{
+    width:30px;
+    height:30px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+}
+
 #titulologin{
     font-weight: 500;
     color: #D19338;
