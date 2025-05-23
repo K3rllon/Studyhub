@@ -16,16 +16,15 @@ include("conexao.php")
 <body>
     <div id="telalogin">
         <div id="ladoesquerdo">
-            <div id="logo">
-                <img src="assets/logo.png" alt="Logo">
+            <div>
+                <img src="assets/logo.png" alt="Logo" id="logo">
             </div>
-            <div id="imagemlogin">
-                <img src="assets/imagem.logo.png" alt="Imagem Login" >
-            </div>
+            <div id="conteinerimagemlogin">
+                <img src="assets/imagem.logo.png" alt="Imagem Login" id="imagemlogin">
+            </div> 
         </div>
-
         <div id="ladodireito">
-            <div id="caixalogin">
+            <div id="logar.php">
                 <form action="login-usuario" method="post">
                     <div id="cabecalhologin">
                         <h1 id="titulologin">Login</h1>
@@ -36,7 +35,7 @@ include("conexao.php")
                     <input type="email" name="email" id="email" placeholder="Digite seu e-mail" class="input">
                     <h5 class="tituloinput">Senha</h5>
                     <input type="password" name="sneha" id="senha" placeholder="Digite sua senha" class="input">
-                    <input type="submit" value="Acessar" id="botao">Acessar</input>
+                    <input type="submit" value="Acessar" id="botao">
                 </form>
             </div>
         </div>

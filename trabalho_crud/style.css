@@ -13,20 +13,31 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 20vh;
 }
 
 
 #imagemlogin{
-    justify-content: center;
-    align-items: center;
+    height: 80vh;
+}
+
+#conteinerimagemlogin{
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: end;
+    height: 100%;
+    width: 50%;
+    padding-left: 700px;
 }
 
 #ladoesquerdo {
     background-color: #FBCC65;
     display: flex;
     width: 50%;
-    justify-content: space-between;
     flex-direction: column;
+    align-items: center;
+    padding: 0%;
 }
 
 #ladodireito{
