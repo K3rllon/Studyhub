@@ -24,8 +24,8 @@ include("conexao.php")
             </div> 
         </div>
         <div id="ladodireito">
-            <div id="logar.php">
-                <form action="login-usuario" method="post">
+            <div id="caixalogin">
+                <form action="logar.php" method="post">
                     <div id="cabecalhologin">
                         <h1 id="titulologin">Login</h1>
                         <img src="assets/portaDeSaidaLogin.png" alt="Imagem porta" id="imgporta">
@@ -34,7 +34,7 @@ include("conexao.php")
                     <h5 class="tituloinput">E-mail</h5>
                     <input type="email" name="email" id="email" placeholder="Digite seu e-mail" class="input">
                     <h5 class="tituloinput">Senha</h5>
-                    <input type="password" name="sneha" id="senha" placeholder="Digite sua senha" class="input">
+                    <input type="password" name="senha" id="senha" placeholder="Digite sua senha" class="input">
                     <input type="submit" value="Acessar" id="botao">
                 </form>
             </div>
