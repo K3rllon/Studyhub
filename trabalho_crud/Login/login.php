@@ -1,16 +1,3 @@
-<?php
-include("conexao.php")
-?>
-
-<?php
-session_start();
-$erro_login = false;
-if (isset($_SESSION['erro_login']) && $_SESSION['erro_login'] === true) {
-    $erro_login = true;
-    unset($_SESSION['erro_login']);
-}
-?>
-
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -41,14 +28,18 @@ if (isset($_SESSION['erro_login']) && $_SESSION['erro_login'] === true) {
                     </div>
                     <h6 id="subtitulo">Digite os seus dados de acesso no campo abaixo.</h6>
                     <h5 class="tituloinput">E-mail</h5>
-                   <input type="email" name="email" class="input <?php if ($erro_login) echo 'erro'; ?>" placeholder="Digite seu e-mail">
+                   <input type="email" name="email" class="input" placeholder="Digite seu e-mail">
                     <h5 class="tituloinput">Senha</h5>
-                    <input type="password" name="senha" class="input <?php if ($erro_login) echo 'erro'; ?>" placeholder="Digite sua senha">
+                    <input type="password" name="senha" class="input" placeholder="Digite sua senha">
                     <input type="submit" value="Acessar" id="botao">
+                    <?php
+                    if (isset($_GET['erro'])) {
+                        if ($_GET['erro']=1) {
+                            echo "<h3 class='mensagem-erro'>Atenção, senha ou email invalidos! Tente novamente.</h3> <br>";
+                        }
+                    }
+                    ?>
                 </form>
-                <?php if ($erro_login): ?>
-                <p class="mensagem-erro">E-mail ou senha incorretos.</p>
-                <?php endif; ?>
             </div>
         </div>
     </div>
