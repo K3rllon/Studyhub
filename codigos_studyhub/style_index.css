@@ -1,0 +1,130 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#telalogin{
+    display: flex;
+    height: 100vh;
+}
+
+#logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 20vh;
+}
+
+
+#imagemlogin{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    height: 80vh;
+}
+
+#ladoesquerdo {
+    background-color: #FBCC65;
+    display: flex;
+    width: 50%;
+    flex-direction: column;
+    align-items: center;
+    padding: 0%;
+}
+
+#ladodireito{
+    background-color: #FEF5E8;
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: left;
+}
+
+#caixalogin {
+    background-color: #E8E8E8;
+    width: 500px;
+    height: 600px;
+    padding: 40px;
+    padding-top: 40px;
+    font-family: 'Istok Web';
+    border-radius: 10px;
+    box-shadow: 0px 0px 1.7px 0px black;
+}
+
+#cabecalhologin{
+    display: flex;
+    align-items: center;
+}
+
+#imgporta{
+    width:40px;
+    height:40px;
+    margin-left: 10px;
+    margin-bottom: 7px;
+}
+
+#titulologin{
+    font-weight: 500;
+    color: #D19338;
+    margin-bottom: 7px;
+    font-size: 45px;
+
+}
+
+#subtitulo{
+    font-weight: 500;
+    margin-bottom: 20px;
+    opacity: 0.7;
+    font-size: 15px;
+    margin-bottom: 50px;
+}
+
+.tituloinput{
+    line-height: 30px;
+    color: #D19338;
+    font-family: 'Istok Web', sans-serif;
+    font-weight: 900;
+    font-size: 16px;
+}
+
+.input{
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    width: 420px;
+    height: 48px;
+    margin-bottom: 30px;
+    font-family: 'Istok Web', sans-serif;
+    font-weight: 100;
+    font-size: 15px;
+    outline: none;
+}
+
+#botao{
+    border: none;
+    background-color: #D19338;
+    color: #E8E8E8;
+    font-size: 15px;
+    margin-top: 70px;
+    border-radius: 10px;
+    padding: 10px;
+    width: 420px;
+    height: 48px;
+    cursor: pointer;
+    transition: all 0.9s ease;
+    margin-bottom: 20px;
+}
+
+#botao:hover{
+    transform: scale(0.95);
+}
+
+.mensagem-erro{
+    color: #D19338;
+    font-size: 15px;
+    font-family: 'Istok Web', sans-serif;
+    text-align: center;
+
+}

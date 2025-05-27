@@ -2,7 +2,7 @@
 session_start();
     $_SESSION['id'] = array();
     session_destroy();
-    header("Location: logar.php");
+    header("Location: index.php");
     exit;
 
 ?>
