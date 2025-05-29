@@ -16,7 +16,7 @@
                 <img src="assets/logo.png" alt="Logo" id="logo">
             </div>
             <div>
-                <img src="assets/imagem.logo.png" alt="Imagem Login" id="imagemlogin">
+                <img src="assets/imagem.login.png" alt="Imagem menina com papeis" id="imagemlogin">
             </div> 
         </div>
         <div id="ladodireito">
