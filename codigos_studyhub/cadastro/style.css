@@ -53,9 +53,19 @@
     box-shadow: 0px 0px 1.7px 0px black;
 }
 
-#cabecalhologin{
+#cabecalhocadastro{
     display: flex;
     align-items: center;
+}
+
+#botaovoltar{
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+    vertical-align: top;
+    top: 80px;
+    position: absolute;
+    left: 920px;
 }
 
 #imgporta{
@@ -65,7 +75,7 @@
     margin-bottom: 7px;
 }
 
-#titulologin{
+#titulocadastro{
     font-weight: 500;
     color: #D19338;
     margin-bottom: 7px;
@@ -77,7 +87,7 @@
     font-weight: 500;
     opacity: 0.7;
     font-size: 15px;
-    margin-bottom: 70px;
+    margin-bottom: 20px;
 }
 
 .tituloinput{
@@ -106,22 +116,14 @@
     background-color: #D19338;
     color: #E8E8E8;
     font-size: 15px;
-    margin-top: 30px;
+    margin-top: 10px;
     border-radius: 10px;
     padding: 10px;
     width: 420px;
     height: 48px;
     cursor: pointer;
     transition: all 0.9s ease;
-    margin-bottom: 10px;
-}
-
-#textoCadastrar{
-    color: #D19338;
-    font-size: 13px;
-    text-align: center;
-    margin-top: 5px;
-    margin-bottom: 5px;
+    margin-bottom: 20px;
 }
 
 #botao:hover{
@@ -129,7 +131,7 @@
 }
 
 .mensagem-erro{
-    color: #FF0000;
+    color: #D19338;
     font-size: 15px;
     font-family: 'Istok Web', sans-serif;
     text-align: center;

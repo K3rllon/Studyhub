@@ -1,0 +1,59 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#homePage{
+    display: flex;
+    background-color: #FEF5E8;
+}
+
+#cabecalhoLateral{
+    background-color: #FBCC65;
+    height: 100vh;
+    width: 100px;
+}
+
+#imagem_seja_bem_vindo{
+    width: 200vh;
+}
+
+#icones{
+    display: grid;
+    grid-template-rows: 1fr 2fr 1fr;
+    height: 100vh;
+    list-style-type: none;
+}
+
+#iconeperfil{
+    width: 45px;
+    justify-content: center;
+    align-items: center;
+}
+
+#iconecasa{
+    width: 40px;
+}
+
+.iconesQuadrados{
+    width: 50px;
+}
+
+#iconesair{
+     justify-content: center;
+     align-items: end;
+}
+
+#iconescentral{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+
+}
+
+#botaoadicionar{
+    position:relative;
+    bottom: 0;
+}

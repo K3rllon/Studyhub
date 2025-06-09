@@ -21,7 +21,7 @@
         </div>
         <div id="ladodireito">
             <div id="caixalogin">
-                <form action="logar.php" method="post">
+                <form action="login/logar.php" method="post">
                     <div id="cabecalhologin">
                         <h1 id="titulologin">Login</h1>
                         <img src="assets/portaDeSaidaLogin.png" alt="Imagem porta" id="imgporta">
@@ -32,6 +32,7 @@
                     <h5 class="tituloinput">Senha</h5>
                     <input type="password" name="senha" class="input" placeholder="Digite sua senha">
                     <input type="submit" value="Acessar" id="botao">
+                    <h6 id="textoCadastrar">Não tem uma conta? <a href="cadastro">Cadastre-se aqui</a></h6>
                     <?php
                     if (isset($_GET['erro'])) {
                         if ($_GET['erro']== 1) {
