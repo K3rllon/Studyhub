@@ -21,7 +21,7 @@
         </div>
         <div id="ladodireito">
             <div id="caixalogin">
-                <form action="logar.php" method="post">
+                <form action="cadastra.php" method="post">
                     <div id="cabecalhocadastro">
                         <a href="../index.php">
                             <img src="assets/voltar.png" alt="Voltar" id="botaovoltar">
@@ -34,8 +34,21 @@
                     <h5 class="tituloinput">Senha</h5>
                     <input type="password" name="senha" class="input" placeholder="Digite sua senha">
                     <h5 class="tituloinput">Confirme sua senha</h5>
-                    <input type="password" name="senha" class="input" placeholder="Digite novamente sua senha">
+                    <input type="password" name="confirmar_senha" class="input" placeholder="Digite novamente sua senha">
                     <input type="submit" value="Cadastrar-se" id="botao">
+
+                    <?php
+                    if (isset($_GET['erro'])) {
+                        if ($_GET['erro']== 1) {
+                            echo "<h3 class='mensagem-erro'>As senhas não coincidem.</h3> <br>";
+                        } if ($_GET['erro']== 2) {
+                            echo "<h3 class='mensagem-erro'>Este email já está cadastrado.</h3> <br>";
+                        } if ($_GET['erro']== 3) {
+                            echo "<h3 class='mensagem-erro'>Precencha todos os campos!</h3> <br>";}
+                    }
+                    if (isset($_GET['cadastro_susucedido'])) {
+                            echo "<h3 id='cadastro-sucedido'>Cadastro realizado com sucesso! </h3> <br>";}
+                    ?>
                 </form>
             </div>
         </div>

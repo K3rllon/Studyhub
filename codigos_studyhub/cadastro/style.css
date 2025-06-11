@@ -137,3 +137,19 @@
     text-align: center;
 
 }
+
+.mensagem-erro{
+    color: #FF0000;
+    font-size: 15px;
+    font-family: 'Istok Web', sans-serif;
+    text-align: center;
+
+}
+
+#cadastro-sucedido{
+    color: #01881c;
+    font-size: 15px;
+    font-family: 'Istok Web', sans-serif;
+    text-align: center;
+
+}

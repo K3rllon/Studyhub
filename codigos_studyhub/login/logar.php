@@ -4,7 +4,7 @@ session_start();
 
 if (isset($_POST['email']) AND !empty($_POST['email']) AND isset($_POST['senha']) AND !empty($_POST['senha']) ) {
 
-    require 'conexao.php';
+    require '../conexao.php';
     require 'Aluno.php';
 
     $usuario = new Aluno();
