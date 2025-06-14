@@ -17,7 +17,7 @@
 }
 
 
-#imagemlogin{
+#imagemCadastroArquivo{
     position: fixed;
     bottom: 0;
     left: 0;
@@ -25,7 +25,7 @@
 }
 
 #ladoesquerdo {
-    background-color: #FBCC65;
+    background-color: #D19338;
     display: flex;
     width: 50%;
     flex-direction: column;
@@ -42,10 +42,11 @@
     text-align: left;
 }
 
-#caixalogin {
+#caixaCriarCategoria {
+    display: flex;
     background-color: #E8E8E8;
     width: 500px;
-    height: 600px;
+    height: 350px;
     padding: 40px;
     padding-top: 40px;
     font-family: 'Istok Web';
@@ -53,7 +54,7 @@
     box-shadow: 0px 0px 1.7px 0px black;
 }
 
-#cabecalhocadastro{
+#cabecalhoarquivo{
     display: flex;
     align-items: center;
 }
@@ -63,7 +64,7 @@
     height: 30px;
     margin-right: 10px;
     vertical-align: top;
-    top: 80px;
+    top: 210px;
     position: absolute;
     left: 920px;
 }
@@ -75,10 +76,10 @@
     margin-bottom: 7px;
 }
 
-#titulocadastro{
+#tituloCriarCategoria{
     font-weight: 500;
     color: #D19338;
-    margin-bottom: 7px;
+    margin-bottom: 2px;
     font-size: 45px;
 
 }
@@ -87,7 +88,7 @@
     font-weight: 500;
     opacity: 0.7;
     font-size: 15px;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 }
 
 .tituloinput{
@@ -104,11 +105,32 @@
     padding: 10px;
     width: 420px;
     height: 48px;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
     font-family: 'Istok Web', sans-serif;
     font-weight: 100;
     font-size: 15px;
     outline: none;
+}
+
+#tituloanexar{
+    line-height: 30px;
+    color: #D19338;
+    font-family: 'Istok Web', sans-serif;
+    font-weight: 900;
+    font-size: 16px;
+    text-align: center;
+    justify-content: center;
+}
+
+#imagemnuvem{
+    height: 40px;
+    width: 50px;
+    margin-left: 185px;
+
+}
+
+#criarCategoria{
+    display: none;
 }
 
 #botao{
@@ -129,6 +151,7 @@
 #botao:hover{
     transform: scale(0.95);
 }
+
 
 .mensagem-erro{
     color: #FF0000;

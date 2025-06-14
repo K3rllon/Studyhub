@@ -47,10 +47,10 @@
         </ul>
     </aside>
     <header>
-        <img src="assets/tela_fundo_seja_bem_vindo.png" alt="Imagem seja bem vindo" id="imagem_seja_bem_vindo">
+        <img src="assets/tela_fundo_categorias.png" alt="Imagem categorias" id="tela_fundo_categorias">
     </header>
     <footer id="rodape">
-        <a href="../adicionar_arquivo">
+        <a href="../criar_categorias">
             <img src="assets/adicionar.png" alt="Adicionar" class="botaoadiciona">
             </a>
     </footer>
