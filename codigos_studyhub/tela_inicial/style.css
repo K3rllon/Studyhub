@@ -1,0 +1,75 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#homePage {
+    display: flex;
+    background-color: #FEF5E8;
+}
+
+#cabecalhoLateral {
+    background-color: #FBCC65;
+    height: 100vh;
+    width: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 0;
+}
+
+#icones {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-between;
+    align-items: center;
+    list-style-type: none;
+}
+
+#iconeperfil {
+    width: 45px;
+}
+
+#iconecasa {
+    width: 40px;
+}
+
+.iconesQuadrados {
+    width: 50px;
+    margin: 10px 0;
+}
+
+#iconescentral {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+#iconesair img {
+    width: 50px;
+}
+
+#imagem_seja_bem_vindo {
+    width: 100%;
+    height: auto;
+}
+
+.botaoadiciona {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.botaoadiciona:hover {
+    transform: scale(1.1);
+}
