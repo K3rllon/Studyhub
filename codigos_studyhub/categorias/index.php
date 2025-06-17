@@ -52,11 +52,13 @@
         <header>
             <img src="assets/tela_fundo_categorias.png" alt="Imagem categorias" id="tela_fundo_categorias">
         </header>
-        <main id="conteudoPrincipal">
-            <?php
-            include "listar_categorias.php";
-            ?>
-        </main>
+        <div id="listaCategorias">
+            <main id="conteudoPrincipal">
+                <?php
+                include "listar_categorias.php";
+                ?>
+            </main>
+        </div>
     </div>
     <footer id="rodape">
         <a href="../criar_categorias">

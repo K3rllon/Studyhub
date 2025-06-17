@@ -8,6 +8,7 @@ while ($row = $resultado->fetch(PDO::FETCH_ASSOC)):?>
         <div class="ladoEsquerdo">
             <img src="assets/categorias" alt="categorias" class="simbuloCategorias">
             <h3><?= htmlspecialchars($row['nome']) ?></h3>
+            <span class="nomeCategoria"><?= htmlspecialchars($row['nome']) ?></span>
         </div>
         <div class="ladoDireito">
             <a href="">

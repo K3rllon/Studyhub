@@ -72,10 +72,25 @@
     font-family: 'Istok Web', sans-serif;
     color: #FEF5E8;
     display: flex;
-    justify-content: ;
+    justify-content: space-between;
     align-items: center;
-    padding-left: 10px;
+    padding: 0 15px;
+    margin-bottom: 20px;
+    break-inside: avoid;
 }
+
+.ladoEsquerdo{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.ladoDireito{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
 
 .simbuloCategorias{
     width: 30px;
@@ -93,10 +108,22 @@
 }
 
 .conteudoPrincipal{
+    column-count: 2;
+    column-gap: 30px;
+}
+
+#listaCategorias{
+    height: calc(100vh - 100px);
+    overflow-y: auto;
     padding: 20px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
+}
+
+.nomeCategoria {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 300px;
+    display: inline-block;
 }
 
 .botaoadiciona {
@@ -109,6 +136,13 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     cursor: pointer;
     transition: transform 0.3s;
+}
+
+#rodape{
+    position: fixed;
+    bottom: 0;
+    width: calc(100% - 76px);
+    background: #FEF5E8;
 }
 
 .botaoadiciona:hover {
