@@ -9,10 +9,15 @@
     background-color: #FEF5E8;
 }
 
+#conteinerLateral{
+    display: flex;
+    flex-direction: column;
+}
+
 #cabecalhoLateral {
     background-color: #FBCC65;
     height: 100vh;
-    width: 100px;
+    width: 76px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -56,6 +61,42 @@
 #tela_fundo_categorias {
     width: 100%;
     height: auto;
+}
+
+.categorias{
+    width: 530px;
+    height: 60px;
+    background-color: #D19338;
+    font-size: 20px;
+    border-radius: 10px;
+    font-family: 'Istok Web', sans-serif;
+    color: #FEF5E8;
+    display: flex;
+    justify-content: ;
+    align-items: center;
+    padding-left: 10px;
+}
+
+.simbuloCategorias{
+    width: 30px;
+    height: 30px;
+}
+
+.simbuloeditar{
+    width: 20px;
+    height: 20px;
+}
+
+.simbuloexcluir{
+    width: 20px;
+    height: 20px;
+}
+
+.conteudoPrincipal{
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
 }
 
 .botaoadiciona {
