@@ -1,18 +1,16 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Studyhub</title>
-</head>
-<body>
-    <!DOCTYPE html>
+
+<?php
+$id_categoria = $id_categoria ?? '';
+$nome = $nome ?? '';
+?>
+
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>StudyHub</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style_form.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Istok+Web:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
@@ -31,34 +29,30 @@
         </div>
         <div id="ladodireito">
             <div id="caixaCriarCategoria">
-                <form action="criar.php" method="post">
+                <form action="alteracao_categorias.php" method="post">
                     <div id="cabecalhoarquivo">
                         <a href="../categorias">
                             <img src="assets/voltar.png" alt="Voltar" id="botaovoltar">
                         </a>
-                        <h1 id="tituloCriarCategoria">Criar Categoria</h1>
+                        <h1 id="tituloCriarCategoria">Edite a categoria</h1>
                     </div>
-                    <h6 id="subtitulo">Crie uma categoria</h6>
+                    <h6 id="subtitulo">Edite o nome da sua categoria abaixo.</h6>
+                    <input type="hidden" name="id_categoria" value="<?= $id_categoria ?>">
                     <h5 class="tituloinput">Nome</h5>
-                   <input type="text" name="nome" class="input" placeholder="Digite um nome para a categoria">
-                    <input type="file" name="arquivo" id="criarCategoria">
-                    <input type="submit" value="Criar" id="botao">
+                    <input type="text" name="nome" class="input" placeholder="Digite um nome para alterarção" value="<?= htmlspecialchars($nome) ?>" required>
+                    <input type="submit" value="Salvar Alteração" id="botao">
 
                     <?php
                     if (isset($_GET['erro'])) {
                         if ($_GET['erro']== 1) {
                             echo "<h3 class='mensagem-erro'>Este nome já está cadastrado.</h3> <br>";
-                        } if ($_GET['erro']== 2) {
-                            echo "<h3 class='mensagem-erro'>Precencha todos os campos!</h3> <br>";}
-                    }
-                    if (isset($_GET['categoria_cadastrada'])) {
-                            echo "<h3 id='cadastro-sucedido'>Categoria cadastrada com sucesso! </h3> <br>";}
+                        }}
+                    if (isset($_GET['categoria_editada'])) {
+                            echo "<h3 id='cadastro-sucedido'>Categoria editada com sucesso! </h3> <br>";}
                     ?>
                 </form>
             </div>
         </div>
     </div>
-</body>
-</html>
 </body>
 </html>

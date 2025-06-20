@@ -53,7 +53,7 @@
             <img src="assets/tela_fundo_categorias.png" alt="Imagem categorias" id="tela_fundo_categorias">
         </header>
         <div id="listaCategorias">
-            <main id="conteudoPrincipal">
+            <main class="conteudoPrincipal">
                 <?php
                 include "listar_categorias.php";
                 ?>

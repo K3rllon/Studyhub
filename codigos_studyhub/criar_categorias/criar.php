@@ -28,6 +28,6 @@ if (isset($_POST["nome"]) AND !empty($_POST["nome"])) {
     }
 } else {
     header("Location: index.php?erro=2");
-     exit;
+    exit;
 }
 ?>
