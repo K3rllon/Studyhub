@@ -46,13 +46,22 @@
             </li>
         </ul>
     </aside>
-    <header>
-        <img src="assets/tela_fundo_seja_bem_vindo.png" alt="Imagem seja bem vindo" id="imagem_seja_bem_vindo">
-    </header>
+    <div id="conteinerLateral">
+        <header>
+            <img src="assets/tela_fundo_seja_bem_vindo.png" alt="Imagem seja bem vindo" id="imagem_seja_bem_vindo">
+        </header>
+        <div id="listaArquivos">
+            <main class="conteudoPrincipal">
+                <?php
+                include "listar_arquivos.php";
+                ?>
+            </main>
+        </div>
+    </div>
     <footer id="rodape">
         <a href="../adicionar_arquivo">
             <img src="assets/adicionar.png" alt="Adicionar" class="botaoadiciona">
-            </a>
+        </a>
     </footer>
 </body>
 </html>

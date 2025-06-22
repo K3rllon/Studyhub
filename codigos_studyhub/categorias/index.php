@@ -64,7 +64,6 @@
         <a href="../criar_categorias">
             <img src="assets/adicionar.png" alt="Adicionar" class="botaoadiciona">
         </a>
-        <button></button>
     </footer>
 </body>
 </html>

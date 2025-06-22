@@ -9,6 +9,11 @@
     background-color: #FEF5E8;
 }
 
+#conteinerLateral{
+    display: flex;
+    flex-direction: column;
+}
+
 #cabecalhoLateral {
     background-color: #FBCC65;
     height: 100vh;
@@ -49,13 +54,97 @@
     gap: 10px;
 }
 
-#iconesair img {
+#iconesair {
     width: 50px;
 }
 
 #imagem_seja_bem_vindo {
     width: 100%;
     height: auto;
+}
+
+#listaArquivos {
+    height: calc(50vh - 10px);
+    overflow-y: auto;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.arquivos {
+    width: 530px;
+    height: 60px;
+    background-color: #D19338;
+    font-size: 20px;
+    border-radius: 10px;
+    font-family: 'Istok Web', sans-serif;
+    color: #FEF5E8;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 15px;
+    break-inside: avoid;
+}
+
+.ladoEsquerdo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex: 1;
+    min-width: 0;
+}
+
+.ladoDireito {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.simbuloArquivo {
+    width: 30px;
+    height: 30px;
+}
+
+.simbuloeditar {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.simbuloexcluir {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.conteudoPrincipal{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    padding: 20px;
+    overflow: hidden;
+}
+
+#listaArquivos{
+    height: calc(50vh - 10px);
+    overflow-y: auto;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.nomeArquivo {
+    display: block;
+    max-width: 350px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 20px;
+    font-weight: bold;
+    color: #FEF5E8;
+}
+
+#conteinerLateral {
+    display: flex;
+    flex-direction: column;
 }
 
 .botaoadiciona {
@@ -70,6 +159,26 @@
     transition: transform 0.3s;
 }
 
+.linkAcesso {
+    text-decoration: none;
+    color: inherit;
+}
+
+#rodape {
+    position: fixed;
+    bottom: 0;
+    left: 76px;
+    width: calc(100% - 76px);
+    background: #FEF5E8;
+    height: auto;
+    padding: 0;
+    margin: 0;
+    z-index: 10;
+}
+
+
 .botaoadiciona:hover {
     transform: scale(1.1);
 }
+
+
