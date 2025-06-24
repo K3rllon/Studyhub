@@ -69,9 +69,7 @@ try {
                             echo "<h3 class='mensagem-erro'>Este nome já está cadastrado.</h3> <br>";
                         } if ($_GET['erro']== 2) {
                             echo "<h3 class='mensagem-erro'>Precencha todos os campos!</h3> <br>";}
-                    }
-                    if (isset($_GET['arquivo_criado'])) {
-                            echo "<h3 id='cadastro-sucedido'>Categoria cadastrada com sucesso! </h3> <br>";}
+                        }
                     ?>
                 </form>
             </div>

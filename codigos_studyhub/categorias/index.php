@@ -42,7 +42,7 @@
                 </div>
                 <li>
                     <a href="../index.php">
-                    <img src="assets/sair.png" alt="Sair" class="iconesQuadrados" id="iconesair">
+                    <img src="assets/sair.png" alt="Sair" class="iconesQuadrados" id="iconesair" onclick="return confirm('Tem certeza que deseja sair?')">
                     </a>
                 </li>
             </ul>

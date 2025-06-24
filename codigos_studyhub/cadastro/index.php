@@ -46,8 +46,6 @@
                         } if ($_GET['erro']== 3) {
                             echo "<h3 class='mensagem-erro'>Precencha todos os campos!</h3> <br>";}
                     }
-                    if (isset($_GET['cadastro_susucedido'])) {
-                            echo "<h3 id='cadastro-sucedido'>Cadastro realizado com sucesso! </h3> <br>";}
                     ?>
                 </form>
             </div>

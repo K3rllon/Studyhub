@@ -12,7 +12,7 @@ while ($row = $resultado->fetch(PDO::FETCH_ASSOC)): ?>
             <h3 class="nomeArquivo"><?= htmlspecialchars($row['nome']) ?></h3>
         </div>
         <div class="ladoDireito">
-            <a href="alteracao_arquivo.php?act=upd&id_arquivos<?= $row['id_arquivos'] ?>">
+            <a href="alteracao_arquivo.php?act=upd&id_arquivos=<?= $row['id_arquivos'] ?>">
                 <img src="assets/lapis.png" alt="Editar" class="simbuloeditar">
             </a>
             <a href="excluir_arquivo.php?act=del&id_arquivos=<?= $row['id_arquivos'] ?>" onclick="return confirm('Tem certeza que deseja excluir esse arquivo?')">

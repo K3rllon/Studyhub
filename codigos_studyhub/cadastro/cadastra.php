@@ -30,7 +30,7 @@ if (isset($_POST["email"], $_POST["senha"], $_POST["confirmar_senha"]) AND !empt
         $stmt->bindParam(2, $senhaCriptografada);
         $stmt->execute();
 
-        header("Location: index.php?cadastro_susucedido");
+        header("Location: ../login");
         exit;
 
     } catch (PDOException $erro) {

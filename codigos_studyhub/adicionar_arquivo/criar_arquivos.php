@@ -31,7 +31,7 @@ if (
             $stmt = $conexao->prepare("INSERT INTO arquivos (nome, tipo, formato, caminho_arquivo, id_categorias) VALUES (?, ?, ?, ?, ?)");
             $stmt->execute([$nome, $tipo_conteudo, $formato, $caminho_banco, $id_categoria]);
 
-            header("Location: index.php?arquivo_criado");
+            header("Location: ../tela_inicial");
             exit;
         } catch (PDOException $erro) {
             echo "Erro ao salvar: " . $erro->getMessage();

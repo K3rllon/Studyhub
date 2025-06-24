@@ -20,7 +20,7 @@ if (isset($_POST["nome"]) AND !empty($_POST["nome"])) {
         $stmt->bindParam(1, $nome);
         $stmt->execute();
 
-        header("Location: index.php?categoria_cadastrada");
+        header("Location: ../categorias");
         exit;
 
     } catch (PDOException $erro) {
