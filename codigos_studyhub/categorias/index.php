@@ -1,3 +1,7 @@
+<?php
+require_once '../seguranca_geral.php';
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
     <?php
@@ -41,8 +45,8 @@
                     </li>
                 </div>
                 <li>
-                    <a href="../index.php">
-                    <img src="assets/sair.png" alt="Sair" class="iconesQuadrados" id="iconesair" onclick="return confirm('Tem certeza que deseja sair?')">
+                    <a href="../login/logout.php">
+                        <img src="assets/sair.png" alt="Sair" class="iconesQuadrados" id="iconesair" onclick="return confirm('Tem certeza que deseja sair?')">
                     </a>
                 </li>
             </ul>

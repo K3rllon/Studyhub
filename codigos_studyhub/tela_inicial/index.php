@@ -1,8 +1,9 @@
+<?php
+require_once '../seguranca_geral.php';
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
-    <?php
-        include('../login/seguranca.php')
-    ?>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -40,7 +41,7 @@
                 </li>
             </div>
             <li>
-                <a href="../index.php">
+                <a href="../login/logout.php">
                 <img src="assets/sair.png" alt="Sair" class="iconesQuadrados" id="iconesair" onclick="return confirm('Tem certeza que deseja sair?')">
                 </a>
             </li>

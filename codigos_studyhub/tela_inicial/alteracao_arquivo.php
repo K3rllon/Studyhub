@@ -1,5 +1,11 @@
 <?php
 require_once "../conexao.php";
+require_once '../seguranca_geral.php';
+
+$id_usuario = $_SESSION['id'] ?? null;
+if (!$id_usuario) {
+    die("Usuário não autenticado.");
+}
 
 $act = $_REQUEST["act"] ?? null;
 $id_arquivos = $_REQUEST["id_arquivos"] ?? "";
@@ -11,22 +17,29 @@ $caminho_arquivo = "";
 $erro = "";
 $sucesso = "";
 
-// Carrega categorias para popular o select do form
 try {
-    $stmtCat = $conexao->query("SELECT id_categoria, nome FROM categorias");
+    $stmtCat = $conexao->prepare("SELECT id_categoria, nome FROM categorias WHERE id_usuario = ?");
+    $stmtCat->execute([$id_usuario]);
     $categorias = $stmtCat->fetchAll(PDO::FETCH_ASSOC);
 } catch (PDOException $e) {
     die("Erro ao carregar categorias: " . $e->getMessage());
 }
 
-// Se for edição, busca os dados para preencher o formulário
 if ($act === "upd" && !empty($id_arquivos)) {
     try {
-        $stmt = $conexao->prepare("SELECT * FROM arquivos WHERE id_arquivos = ?");
+        $stmt = $conexao->prepare("
+            SELECT a.*, c.id_usuario 
+            FROM arquivos a
+            INNER JOIN categorias c ON a.id_categorias = c.id_categoria
+            WHERE a.id_arquivos = ?
+        ");
         $stmt->execute([$id_arquivos]);
         $arquivo = $stmt->fetch(PDO::FETCH_ASSOC);
 
         if ($arquivo) {
+            if ($arquivo['id_usuario'] != $id_usuario) {
+                die("Você não tem permissão para editar este arquivo.");
+            }
             $nome = $arquivo['nome'];
             $tipo = $arquivo['tipo'];
             $formato = $arquivo['formato'];
@@ -51,20 +64,39 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     if ($nome === "" || $tipo === "" || $formato === "" || $id_categorias === "") {
         $erro = "Preencha todos os campos!";
     } else {
+        $stmtValidaCat = $conexao->prepare("SELECT 1 FROM categorias WHERE id_categoria = ? AND id_usuario = ?");
+        $stmtValidaCat->execute([$id_categorias, $id_usuario]);
+        if (!$stmtValidaCat->fetch()) {
+            $erro = "Categoria inválida ou não pertence a você.";
+        }
+    }
+
+    if (!$erro) {
         if (isset($_FILES['arquivo']) && $_FILES['arquivo']['error'] === 0) {
             $nome_arquivo = basename($_FILES["arquivo"]["name"]);
             $diretorio = "../adicionar_arquivo/uploads/";
-            $caminho_arquivo = $diretorio . $nome_arquivo;
-
-            if (!move_uploaded_file($_FILES["arquivo"]["tmp_name"], $caminho_arquivo)) {
-                $erro = "Erro ao enviar o arquivo.";
+            
+            $extensao = strtolower(pathinfo($nome_arquivo, PATHINFO_EXTENSION));
+            $permitidos = ['pdf','mp4','avi','mov','png','jpg','jpeg'];
+            if (!in_array($extensao, $permitidos)) {
+                $erro = "Tipo de arquivo não permitido.";
+            } else {
+                $novo_nome = uniqid() . '.' . $extensao;
+                $caminho_arquivo = $diretorio . $novo_nome;
+                if (!move_uploaded_file($_FILES["arquivo"]["tmp_name"], $caminho_arquivo)) {
+                    $erro = "Erro ao enviar o arquivo.";
+                }
             }
         } elseif (!empty($id_arquivos)) {
             try {
-                $stmt = $conexao->prepare("SELECT caminho_arquivo FROM arquivos WHERE id_arquivos = ?");
+                $stmt = $conexao->prepare("SELECT a.caminho_arquivo, c.id_usuario FROM arquivos a INNER JOIN categorias c ON a.id_categorias = c.id_categoria WHERE a.id_arquivos = ?");
                 $stmt->execute([$id_arquivos]);
                 $resultado = $stmt->fetch(PDO::FETCH_ASSOC);
-                $caminho_arquivo = $resultado["caminho_arquivo"] ?? "";
+                if (!$resultado || $resultado['id_usuario'] != $id_usuario) {
+                    $erro = "Você não tem permissão para alterar este arquivo.";
+                } else {
+                    $caminho_arquivo = $resultado["caminho_arquivo"] ?? "";
+                }
             } catch (PDOException $e) {
                 $erro = "Erro ao buscar caminho do arquivo: " . $e->getMessage();
             }
@@ -89,12 +121,14 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                     if ($id_arquivos !== "") {
                         $stmt = $conexao->prepare("UPDATE arquivos SET nome = ?, tipo = ?, formato = ?, id_categorias = ?, caminho_arquivo = ? WHERE id_arquivos = ?");
                         $stmt->execute([$nome, $tipo, $formato, $id_categorias, $caminho_arquivo, $id_arquivos]);
-                        $sucesso = "Arquivo editado com sucesso!";
+                        header("Location: index.php");
+                        exit();
                     } else {
                         $stmt = $conexao->prepare("INSERT INTO arquivos (nome, tipo, formato, id_categorias, caminho_arquivo) VALUES (?, ?, ?, ?, ?)");
                         $stmt->execute([$nome, $tipo, $formato, $id_categorias, $caminho_arquivo]);
                         $id_arquivos = $conexao->lastInsertId();
-                        $sucesso = "Arquivo criado com sucesso!";
+                        header("Location: index.php");
+                        exit();
                     }
                 }
             } catch (PDOException $e) {
@@ -105,4 +139,3 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 }
 
 include "form_editar_arquivo.php";
-?>

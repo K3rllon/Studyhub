@@ -1,3 +1,7 @@
+<?php
+require_once '../seguranca_geral.php';
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>

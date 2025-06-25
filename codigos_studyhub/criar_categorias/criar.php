@@ -1,24 +1,34 @@
 <?php
+require_once '../seguranca_geral.php';
 require_once "../conexao.php";
 
-if (isset($_POST["nome"]) AND !empty($_POST["nome"])) {
+function redirecionarComErro($erro, $nome = '') {
+    $params = http_build_query([
+        'erro' => $erro,
+        'nome' => $nome,
+    ]);
+    header("Location: index.php?$params");
+    exit;
+}
 
-    $nome = $_POST["nome"];
-    
+$id_usuario = $_SESSION['id'] ?? null;
+if (!$id_usuario) {
+    die("Usuário não autenticado.");
+}
+
+if (isset($_POST["nome"]) && !empty(trim($_POST["nome"]))) {
+    $nome = trim($_POST["nome"]);
+
     try {
-
-        $checar_nome = $conexao->prepare("SELECT id_categoria FROM categorias WHERE nome = ?");
-        $checar_nome->bindParam(1, $nome);
-        $checar_nome->execute();
+        $checar_nome = $conexao->prepare("SELECT id_categoria FROM categorias WHERE nome = ? AND id_usuario = ?");
+        $checar_nome->execute([$nome, $id_usuario]);
 
         if ($checar_nome->rowCount() > 0) {
-            header("Location: index.php?erro=1");
-            exit;
+            redirecionarComErro(1, $nome);
         }
 
-        $stmt = $conexao->prepare("INSERT INTO categorias (nome) VALUES (?) ");
-        $stmt->bindParam(1, $nome);
-        $stmt->execute();
+        $stmt = $conexao->prepare("INSERT INTO categorias (nome, id_usuario) VALUES (?, ?)");
+        $stmt->execute([$nome, $id_usuario]);
 
         header("Location: ../categorias");
         exit;
@@ -26,8 +36,8 @@ if (isset($_POST["nome"]) AND !empty($_POST["nome"])) {
     } catch (PDOException $erro) {
         echo "Erro ao salvar: " . $erro->getMessage();
     }
+
 } else {
-    header("Location: index.php?erro=2");
-    exit;
+    $nome = $_POST["nome"] ?? '';
+    redirecionarComErro(2, $nome);
 }
-?>
